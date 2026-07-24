@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Cybersecurity Master Class for Students | Created by Raunak Raj</title>
+  <meta name="description" content="A premium, highly readable, interactive single-page cybersecurity notes website for school children. Master online safety, social media privacy, phishing protection, and legal rights. Made by Raunak Raj.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Header & Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="shield-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="brand-text-wrapper">
+          <span class="brand-title gradient-text">CYBER GUARDIAN</span>
+          <span class="brand-subtitle">Student Security Notes</span>
+        </div>
+      </a>
+
+      <!-- TOP BRANDING ATTR (STARTING) -->
+      <span class="raunak-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Made By Raunak Raj
+      </span>
+
+      <div class="nav-actions">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search topics (e.g. Wi-Fi, Phishing)...">
+        </div>
+        <button class="btn-quick-nav" onclick="window.print()">🖨️ Print Notes</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="raunak-badge">Made By Raunak Raj</span>
+        <span style="color: var(--primary-cyan); font-weight: 700; font-size: 0.85rem;">• Comprehensive School Edition</span>
+      </div>
+      <h1 class="hero-title">Master Cyber Safety & Protect Your <span class="gradient-text">Digital Life</span></h1>
+      <p class="hero-description">
+        Welcome to the ultimate cybersecurity handbook designed specially for school students! Learn how internet networks function, shield yourself from online threats, defend against scams, and become a smart digital superhero.
+      </p>
+      
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">11+</div>
+          <div class="stat-label">Core Subtopics</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15</div>
+          <div class="stat-label">Quiz Questions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Helpline Info</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="hero-image-frame">
+        <img src="assets/images/cyber_hero.jpg" alt="Cybersecurity Hero Badge Illustration">
+        <div class="hero-watermark-overlay">
+          <span>🛡️ Official Cyber Classroom Notes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Topic Navigation Chips -->
+  <nav class="topics-nav-bar">
+    <div class="topics-scroll-wrapper">
+      <a href="#intro" class="topic-chip active">1. Intro</a>
+      <a href="#social-media" class="topic-chip">2. Social Media</a>
+      <a href="#cyberbullying" class="topic-chip">3. Cyberbullying</a>
+      <a href="#financial" class="topic-chip">4. Financial Safety</a>
+      <a href="#public-wifi" class="topic-chip">5. Public Wi-Fi</a>
+      <a href="#grooming" class="topic-chip">6. Cyber Grooming</a>
+      <a href="#gaming" class="topic-chip">7. Online Gaming</a>
+      <a href="#before-post" class="topic-chip">8. Before You Post</a>
+      <a href="#safe-browsing" class="topic-chip">9. Safe Websites</a>
+      <a href="#dos-donts" class="topic-chip">10. Do's & Don'ts</a>
+      <a href="#legal-helpline" class="topic-chip">11. Cyber Laws</a>
+      <a href="#password-lab" class="topic-chip" style="border-color: var(--accent-gold); color: var(--accent-gold);">⚡ Password Lab</a>
+      <a href="#scam-spotter" class="topic-chip" style="border-color: var(--emerald-green); color: var(--emerald-green);">🔍 Scam Simulator</a>
+      <a href="#cyber-quiz" class="topic-chip" style="border-color: var(--secondary-purple); color: var(--secondary-purple);">🏆 15-Q Quiz</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- SUBTOPIC 1: Cyber Security Intro -->
+    <section class="subtopic-card" id="intro">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 01</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">FUNDAMENTALS</span>
+        </div>
+        <h2 class="subtopic-title">What is Cybersecurity? (Detailed Overview)</h2>
+      </div>
+
+      <div class="subtopic-grid">
+        <div class="subtopic-text-content">
+          <p>
+            <strong>Cybersecurity</strong> is the practice of protecting internet-connected systems—including hardware, software, personal data, and mobile devices—from malicious digital attacks, unauthorized access, and damage. In simple terms, just as we lock our homes to keep burglars out, cybersecurity acts as a digital lock and shield for our computers, phones, and personal secrets on the web.
+          </p>
+          <p>
+            For school students, understanding cybersecurity is essential because we use the internet daily for online classes, gaming, video streaming, homework research, and chatting with friends. Modern cybersecurity relies on three fundamental pillars known as the <strong>CIA Triad</strong>:
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">✓</span> <strong>Confidentiality:</strong> Ensuring your private information (passwords, photos, chat messages) is accessible only to you and authorized people.</li>
+            <li><span class="point-icon">✓</span> <strong>Integrity:</strong> Protecting data from being illegally altered, modified, or tampered with by cybercriminals or viruses.</li>
+            <li><span class="point-icon">✓</span> <strong>Availability:</strong> Ensuring that your computer systems, websites, and school portals work smoothly whenever you need them.</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/cyber_hero.jpg" alt="Cybersecurity Introduction Shield">
+          <div class="graphic-caption">
+            <span>Figure 1.1: The Digital Protection Shield</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 2: Social Media Safety -->
+    <section class="subtopic-card" id="social-media">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 02</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">PRIVACY & NETWORKING</span>
+        </div>
+        <h2 class="subtopic-title">Social Media Safety Guidelines</h2>
+      </div>
+
+      <div class="subtopic-grid reverse">
+        <div class="subtopic-text-content">
+          <p>
+            Social media platforms allow us to connect and share moments with friends, but oversharing or ignoring privacy settings can expose us to serious risks like identity theft and online stalkers.
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">🔒</span> <strong>Strict Private Account Settings:</strong> Always keep your profile set to 'Private' so only approved friends can see your posts and photos.</li>
+            <li><span class="point-icon">🚫</span> <strong>Never Accept Unknown Friend Requests:</strong> Online profiles can be fake; never accept requests from strangers.</li>
+            <li><span class="point-icon">📍</span> <strong>Disable Live Location Tagging:</strong> Avoid posting your real-time school location, home address, or phone numbers.</li>
+            <li><span class="point-icon">🔑</span> <strong>Keep Credentials Secret:</strong> Never share social media login passwords, even with close friends.</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/social_media_safety.jpg" alt="Social Media Safety Graphic">
+          <div class="graphic-caption">
+            <span>Figure 2.1: Social Media Privacy Lock</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 3: Cyber Bullying -->
+    <section class="subtopic-card" id="cyberbullying">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 03</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">SAFETY & WELLBEING</span>
+        </div>
+        <h2 class="subtopic-title">Understanding & Defeating Cyberbullying</h2>
+      </div>
+
+      <div class="subtopic-grid">
+        <div class="subtopic-text-content">
+          <p>
+            <strong>Cyberbullying</strong> is the use of digital communication (social media, messaging apps, gaming lobbies) to intimidate, harass, humiliate, or target someone repeatedly. Examples include sending mean messages, posting fake rumors, creating mock accounts, or leaking private chats.
+          </p>
+          <div class="kid-pro-tip">
+            <div class="tip-icon">🛡️</div>
+            <div class="tip-content">
+              <strong>The 4-Step Bully Defense Formula:</strong>
+              1. <strong>Don't Respond:</strong> Bullies seek reactions. Staying calm starves them of attention.<br>
+              2. <strong>Take Screenshots:</strong> Save evidence of offensive messages with dates.<br>
+              3. <strong>Block & Report:</strong> Use platform report buttons to block the bully immediately.<br>
+              4. <strong>Tell a Trusted Adult:</strong> Inform parents, teachers, or school counselors right away.
+            </div>
+          </div>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/cyberbullying.jpg" alt="Cyberbullying Defense Shield">
+          <div class="graphic-caption">
+            <span>Figure 3.1: Shielding Against Digital Harassment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 4: Financial Security & Personal Info -->
+    <section class="subtopic-card" id="financial">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 04</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">IDENTITY & SCAMS</span>
+        </div>
+        <h2 class="subtopic-title">Financial Security & Personal Info Protection</h2>
+      </div>
+
+      <div class="subtopic-grid reverse">
+        <div class="subtopic-text-content">
+          <p>
+            Cybercriminals frequently target students and parents to steal sensitive credentials such as credit card numbers, UPI PINs, Aadhaar numbers, and One-Time Passwords (OTPs).
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">🔐</span> <strong>OTP Confidentiality:</strong> Never disclose an OTP (One Time Password) to anyone over phone calls, SMS, or WhatsApp. Bank officials never ask for OTPs!</li>
+            <li><span class="point-icon">⚠️</span> <strong>Beware of Phishing Links:</strong> Do not click on suspicious links claiming you won cash prizes, free smartphones, or lottery rewards.</li>
+            <li><span class="point-icon">💳</span> <strong>Safe Online Payments:</strong> Only use trusted payment gateways with your parents' permission.</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/financial_security.jpg" alt="Financial Security Vault">
+          <div class="graphic-caption">
+            <span>Figure 4.1: Personal Vault & Credential Protection</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 5: Public Wi-Fi Risks -->
+    <section class="subtopic-card" id="public-wifi">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 05</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">NETWORK SECURITY</span>
+        </div>
+        <h2 class="subtopic-title">Public Wi-Fi Networks: Dangers & VPN Safety</h2>
+      </div>
+
+      <div class="subtopic-grid">
+        <div class="subtopic-text-content">
+          <p>
+            Free public Wi-Fi networks in airports, cafes, or parks are convenient, but they lack encryption. Hackers on the same network can execute <em>"Man-in-the-Middle" (MitM)</em> attacks to eavesdrop on your unencrypted network traffic.
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">🚫</span> <strong>Avoid Sensitive Logins:</strong> Never access bank accounts, shopping apps, or school portals on open public Wi-Fi.</li>
+            <li><span class="point-icon">🛡️</span> <strong>Use a VPN (Virtual Private Network):</strong> A VPN encrypts all data sent from your phone or laptop, rendering it unreadable to snoopers.</li>
+            <li><span class="point-icon">⚙️</span> <strong>Turn Off Auto-Connect:</strong> Disable 'Auto-Connect to Open Wi-Fi' in your phone settings.</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/public_wifi.jpg" alt="Public Wi-Fi Risk Diagram">
+          <div class="graphic-caption">
+            <span>Figure 5.1: Open Wi-Fi vs Encrypted VPN Tunnel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 6: Cyber Grooming -->
+    <section class="subtopic-card" id="grooming">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 06</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">STRANGER DANGER</span>
+        </div>
+        <h2 class="subtopic-title">Cyber Grooming Awareness (Stranger Danger)</h2>
+      </div>
+
+      <div class="subtopic-grid reverse">
+        <div class="subtopic-text-content">
+          <p>
+            <strong>Cyber Grooming</strong> occurs when an online predator pretends to be a friend, peer, or helper to build trust with a young person, gradually manipulating them into sending private photos or meeting offline.
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">🚩</span> <strong>Red Flags:</strong> Strangers giving extravagant gifts, asking to keep secrets from parents, or requesting private photos.</li>
+            <li><span class="point-icon">🛑</span> <strong>Zero Offline Meetings:</strong> Never meet an online stranger in real life without your parents accompanying you.</li>
+            <li><span class="point-icon">🗣️</span> <strong>Speak Up Without Fear:</strong> If someone online makes you feel uncomfortable, tell your parents or teachers immediately. You are not in trouble!</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/cyber_grooming.jpg" alt="Cyber Grooming Protection Graphic">
+          <div class="graphic-caption">
+            <span>Figure 6.1: Online Stranger Alert Shield</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 7: Online Gaming Safety -->
+    <section class="subtopic-card" id="gaming">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 07</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">ESPORTS & GAMING</span>
+        </div>
+        <h2 class="subtopic-title">Online Gaming Safety & Account Protection</h2>
+      </div>
+
+      <div class="subtopic-grid">
+        <div class="subtopic-text-content">
+          <p>
+            Online multiplayer games are fun, but in-game voice chat lobbies, unauthorized mods, and trade scams expose gamers to cyber risks.
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">🎮</span> <strong>Use Gamertags / Pseudonyms:</strong> Never use your real name, birth year, or school name in your gaming handle.</li>
+            <li><span class="point-icon">🚫</span> <strong>Avoid Unofficial Game Mods:</strong> Downloading illegal cheats, hacks, or free skin generators often installs spyware and trojans on your PC.</li>
+            <li><span class="point-icon">💰</span> <strong>In-App Purchase Safeguards:</strong> Always obtain parental permission before making in-game microtransactions.</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/online_gaming.jpg" alt="Online Gaming Security Graphic">
+          <div class="graphic-caption">
+            <span>Figure 7.1: Esports Account Safeguard</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 8: Things to Remember Before You Post -->
+    <section class="subtopic-card" id="before-post">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 08</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">DIGITAL ETIQUETTE</span>
+        </div>
+        <h2 class="subtopic-title">The T.H.I.N.K. Checklist Before You Post</h2>
+      </div>
+
+      <div class="subtopic-grid reverse">
+        <div class="subtopic-text-content">
+          <p>
+            Remember: <em>"The Internet Never Forgets!"</em> Once a photo or comment is posted online, anyone can screenshot and save it forever. Before clicking 'Publish' or 'Send', run your content through the 5-point T.H.I.N.K. filter:
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">T</span> <strong>Is it True?</strong> Avoid spreading rumors, fake news, or unverified gossip.</li>
+            <li><span class="point-icon">H</span> <strong>Is it Helpful?</strong> Will your post build someone up or tear them down?</li>
+            <li><span class="point-icon">I</span> <strong>Is it Inspiring?</strong> Does it convey positivity and respect for others?</li>
+            <li><span class="point-icon">N</span> <strong>Is it Necessary?</strong> Is there a genuine need to share this publicly?</li>
+            <li><span class="point-icon">K</span> <strong>Is it Kind?</strong> Would you be comfortable showing this post to your parents or teachers?</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/think_before_post.jpg" alt="THINK Before You Post Checklist">
+          <div class="graphic-caption">
+            <span>Figure 8.1: The 5-Point Digital Post Filter</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 9: Safe Website Navigation -->
+    <section class="subtopic-card" id="safe-browsing">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 09</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">WEB BROWSING</span>
+        </div>
+        <h2 class="subtopic-title">Safe Website Browsing & HTTPS Security</h2>
+      </div>
+
+      <div class="subtopic-grid">
+        <div class="subtopic-text-content">
+          <p>
+            When visiting websites for research or entertainment, always inspect the URL address bar to ensure your connection is encrypted.
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">🔒</span> <strong>Look for HTTPS & Lock Icon:</strong> Safe websites begin with <code>https://</code> (the 'S' stands for Secure). Avoid unencrypted <code>http://</code> websites when submitting data.</li>
+            <li><span class="point-icon">🔍</span> <strong>Inspect Domain Spelling:</strong> Watch out for typo-squatted fake domains like <code>goog1e.com</code> or <code>paypa1-update.org</code>.</li>
+            <li><span class="point-icon">🚫</span> <strong>Block Malicious Pop-ups:</strong> Never click on flashing browser pop-ups warning "Your PC has 5 viruses! Click here to fix."</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/safe_website.jpg" alt="Safe Website HTTPS Lock">
+          <div class="graphic-caption">
+            <span>Figure 9.1: HTTPS Address Bar Verification</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 10: Do's and Don'ts to Avoid Cyber Attacks -->
+    <section class="subtopic-card" id="dos-donts">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 10</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">ACTIONABLE RULES</span>
+        </div>
+        <h2 class="subtopic-title">Master Cyber Do's & Don'ts Checklist</h2>
+      </div>
+
+      <div class="dos-donts-container">
+        <div class="dos-column">
+          <div class="col-header">
+            <span>✅</span> CYBER DO'S (ALWAYS DO THIS)
+          </div>
+          <ul class="key-points-list">
+            <li><span class="point-icon">✓</span> Enable Multi-Factor Authentication (MFA / 2FA) on all your accounts.</li>
+            <li><span class="point-icon">✓</span> Use unique, complex passwords for every single platform.</li>
+            <li><span class="point-icon">✓</span> Keep your Operating System, Antivirus, and Apps updated regularly.</li>
+            <li><span class="point-icon">✓</span> Cover your laptop webcam when not in use.</li>
+            <li><span class="point-icon">✓</span> Log out of public or school computers after finishing your session.</li>
+          </ul>
+        </div>
+
+        <div class="donts-column">
+          <div class="col-header">
+            <span>❌</span> CYBER DON'TS (NEVER DO THIS)
+          </div>
+          <ul class="key-points-list" style="border-color: var(--rose-red);">
+            <li><span class="point-icon" style="color: var(--rose-red); background: rgba(244,63,94,0.2);">✕</span> Never save passwords on shared or public web browsers.</li>
+            <li><span class="point-icon" style="color: var(--rose-red); background: rgba(244,63,94,0.2);">✕</span> Never plug unknown USB flash drives into your laptop.</li>
+            <li><span class="point-icon" style="color: var(--rose-red); background: rgba(244,63,94,0.2);">✕</span> Never share your OTP, credit card CVV, or passwords with anyone.</li>
+            <li><span class="point-icon" style="color: var(--rose-red); background: rgba(244,63,94,0.2);">✕</span> Never download pirated software, movies, or cracked games.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- SUBTOPIC 11: Legal Stand Against Cyber Crimes & Helplines -->
+    <section class="subtopic-card" id="legal-helpline">
+      <div class="subtopic-header">
+        <div class="subtopic-meta-row">
+          <span class="subtopic-number">SUBTOPIC 11</span>
+          <span class="subtopic-number" style="color: var(--text-dim);">LEGAL RIGHTS</span>
+        </div>
+        <h2 class="subtopic-title">Legal Rights & Emergency Cyber Helplines</h2>
+      </div>
+
+      <div class="subtopic-grid">
+        <div class="subtopic-text-content">
+          <p>
+            Cyberbullying, financial fraud, identity theft, and stalking are serious criminal offenses punishable under law (such as the <strong>Information Technology Act, 2000</strong> and <strong>POCSO Act</strong> in India, alongside global cyber laws).
+          </p>
+          <ul class="key-points-list">
+            <li><span class="point-icon">📞</span> <strong>National Cyber Crime Toll-Free Helpline:</strong> Call <strong>1930</strong> immediately to report financial cyber fraud within the first golden hour.</li>
+            <li><span class="point-icon">🌐</span> <strong>Official Complaint Portal:</strong> Register anonymous complaints at <a href="https://cybercrime.gov.in" target="_blank" style="color: var(--primary-cyan); font-weight:700;">cybercrime.gov.in</a>.</li>
+            <li><span class="point-icon">⚖️</span> <strong>Legal Rights for Minors:</strong> Minors are protected against digital stalking, harassment, and unauthorized photo sharing. Law enforcement agencies have specialized Cyber Crime Cells to investigate and apprehend offenders.</li>
+          </ul>
+        </div>
+        <div class="subtopic-graphic-box">
+          <img src="assets/images/cyber_laws.jpg" alt="Digital Legal Scales & Helpline 1930">
+          <div class="graphic-caption">
+            <span>Figure 11.1: Cyber Crime Justice & National Helpline 1930</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider-line"></div>
+
+    <!-- INTERACTIVE LAB 1: Password Strength Meter -->
+    <section class="interactive-lab-card" id="password-lab">
+      <div class="lab-header">
+        <h2 class="lab-title">⚡ Strong Password Analyzer Lab</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Test your password strength in real time. (No data is saved or sent over the network).</p>
+      </div>
+
+      <div class="password-widget">
+        <div class="input-group">
+          <input type="text" class="pwd-input" id="pwdInput" placeholder="Type a password to test (e.g. Cyber#Guard2026!)...">
+        </div>
+        <div class="pwd-meter">
+          <div class="pwd-meter-fill" id="pwdMeterFill"></div>
+        </div>
+        <div class="pwd-feedback" id="pwdFeedback">Type a sample password to test strength...</div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LAB 2: Scam & Phishing Spotter Simulator -->
+    <section class="interactive-lab-card" id="scam-spotter" style="border-color: var(--emerald-green);">
+      <div class="lab-header">
+        <h2 class="lab-title">🔍 Scam & Phishing Spotter Simulator</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Can you spot the fake email? Test your cyber detective skills below!</p>
+      </div>
+
+      <div class="scam-simulator-container">
+        <div id="scamDisplay"></div>
+        <div id="scamResult" style="display:none; padding: 1.25rem; border-radius: var(--radius-md); text-align:center; font-size:1.05rem;"></div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE LAB 3: Cyber Security Guardian Quiz (15 QUESTIONS) -->
+    <section class="interactive-lab-card" id="cyber-quiz" style="border-color: var(--accent-gold);">
+      <div class="lab-header">
+        <h2 class="lab-title">🏆 Official 15-Question Cyber Guardian Quiz</h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem;">Answer all 15 questions to test your complete cybersecurity mastery!</p>
+      </div>
+
+      <div class="quiz-container">
+        <div id="cyberQuizForm"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer (ENDING BRANDING ATTR ONLY) -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-branding-card">
+        <span class="raunak-badge">Official Creator Signature</span>
+        <h2 class="footer-creator-title gradient-gold">Made By Raunak Raj</h2>
+        <p style="color: var(--text-muted); max-width: 600px;">
+          Crafted with passion to educate, empower, and protect school children across the digital world. Stay safe, stay smart, and keep learning!
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#intro">1. Intro</a>
+        <a href="#social-media">2. Social Media</a>
+        <a href="#cyberbullying">3. Cyberbullying</a>
+        <a href="#financial">4. Financial Safety</a>
+        <a href="#public-wifi">5. Public Wi-Fi</a>
+        <a href="#legal-helpline">11. Cyber Laws</a>
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 Cybersecurity Master Classroom • Designed for School Students • <strong>Made By Raunak Raj</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
