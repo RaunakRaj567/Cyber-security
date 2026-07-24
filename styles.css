@@ -1,6 +1,6 @@
 /* ==========================================================================
    CYBERSECURITY MASTER CLASSROOM - PREMIUM STYLESHEET
-   ULTRA-CLEAN MOBILE & RESPONSIVE DESIGN (ZERO MESSY WORD WRAPS)
+   ULTRA-SMOOTH 60FPS MOBILE SCROLLING PERFORMANCE OPTIMIZED
    Author & Creator: Raunak Raj
    ========================================================================== */
 
@@ -10,7 +10,6 @@
   /* Color Palette */
   --bg-dark: #070913;
   --bg-card: rgba(16, 23, 42, 0.75);
-  --bg-card-hover: rgba(30, 41, 59, 0.88);
   --bg-glass: rgba(15, 23, 42, 0.65);
   --bg-elevated: #0f172a;
   
@@ -61,6 +60,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Body Base - NO background-attachment: fixed (Fixes 60fps mobile lag) */
 body {
   background-color: var(--bg-dark);
   color: var(--text-main);
@@ -69,11 +69,24 @@ body {
   overflow-x: hidden;
   position: relative;
   width: 100%;
+}
+
+/* Hardware Accelerated Fixed Overlay Background for Smooth Mobile Touch Scroll */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
   background-image: 
     radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
     radial-gradient(circle at 85% 65%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
     radial-gradient(circle at 50% 90%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
-  background-attachment: fixed;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* Scroll Progress Bar */
@@ -119,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-/* Branding Badges: "Made By Raunak Raj" (Top & Bottom Only) - ALWAYS SINGLE LINE */
+/* Branding Badges: "Made By Raunak Raj" (Top & Bottom Only) */
 .raunak-badge {
   display: inline-flex;
   align-items: center;
@@ -134,10 +147,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  white-space: nowrap; /* GUARANTEES SINGLE LINE */
+  white-space: nowrap;
   flex-shrink: 0;
   box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
-  backdrop-filter: blur(8px);
 }
 .raunak-badge svg {
   width: 13px;
@@ -159,9 +171,11 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   width: 100%;
   z-index: 900;
-  background: rgba(7, 9, 19, 0.92);
-  backdrop-filter: blur(16px);
+  background: rgba(7, 9, 19, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
+  transform: translateZ(0);
 }
 
 .nav-container {
@@ -275,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  white-space: nowrap; /* GUARANTEES SINGLE LINE */
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
@@ -301,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: nowrap; /* Keep tag in single line */
+  flex-wrap: nowrap;
   overflow-x: auto;
   max-width: 100%;
 }
@@ -330,13 +344,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-card {
-  background: var(--bg-glass);
+  background: rgba(15, 23, 42, 0.75);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 0.75rem 0.4rem;
   text-align: center;
-  backdrop-filter: blur(10px);
-  white-space: nowrap; /* SINGLE LINE STAT CARDS */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -381,29 +394,30 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0.6rem;
   right: 0.6rem;
   background: rgba(7, 9, 19, 0.88);
-  backdrop-filter: blur(12px);
   padding: 4px 10px;
   border-radius: 9999px;
   border: 1px solid rgba(6, 182, 212, 0.4);
   color: var(--primary-cyan);
   font-size: 0.725rem;
   font-weight: 700;
-  white-space: nowrap; /* ALWAYS SINGLE LINE */
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* Sticky Topic Index Bar - STRICT SINGLE LINE TOUCH HORIZONTAL SCROLL */
+/* Sticky Topic Index Bar - High Speed Smooth Touch Scrolling */
 .topics-nav-bar {
   position: sticky;
   top: 55px;
   z-index: 800;
-  background: rgba(15, 23, 42, 0.94);
-  backdrop-filter: blur(16px);
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
   padding: 0.55rem 0;
   margin-bottom: 2rem;
   width: 100%;
+  transform: translateZ(0);
 }
 
 .topics-scroll-wrapper {
@@ -411,10 +425,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
-  flex-wrap: nowrap !important; /* CRITICAL: NEVER WRAP CHIPS */
+  flex-wrap: nowrap !important;
   gap: 0.5rem;
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
 }
 .topics-scroll-wrapper::-webkit-scrollbar {
@@ -431,8 +446,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
-  white-space: nowrap !important; /* CRITICAL: STRICT SINGLE LINE */
-  flex-shrink: 0 !important; /* NEVER SQUISH */
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
   display: inline-block;
 }
 .topic-chip:hover, .topic-chip.active {
@@ -458,7 +473,6 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: clamp(1.15rem, 3.5vw, 2.25rem);
-  backdrop-filter: blur(16px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
@@ -789,7 +803,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
   transition: var(--transition-bounce);
-  white-space: nowrap; /* KEEP BUTTON TEXT SINGLE LINE */
+  white-space: nowrap;
   min-height: 42px;
 }
 .btn-legit {
@@ -872,7 +886,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
   box-shadow: 0 0 18px var(--gold-glow);
-  white-space: nowrap; /* SINGLE LINE BUTTON */
+  white-space: nowrap;
   min-height: 44px;
 }
 
@@ -936,43 +950,35 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
 }
 
-/* Print Styles */
-@media print {
-  .site-header, .topics-nav-bar, .scroll-progress-container, .interactive-lab-card, .btn-quick-nav {
-    display: none !important;
-  }
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  .subtopic-card {
-    background: #ffffff !important;
-    border: 1px solid #ccc !important;
-    box-shadow: none !important;
-    page-break-inside: avoid;
-    margin-bottom: 1.5rem;
-    color: #000000 !important;
-  }
-}
-
 /* ==========================================================================
-   ULTRA-CLEAN RESPONSIVE BREAKPOINTS (ALL MOBILE PHONES & TABLETS)
+   MOBILE GPU PERFORMANCE OVERRIDES (60FPS SMOOTH SCROLLING)
    ========================================================================== */
 
-/* 1. Desktop & Large Screens (>= 993px) */
-@media (min-width: 993px) {
-  .hero-section {
-    grid-template-columns: 1.15fr 0.85fr;
+@media (max-width: 768px) {
+  /* Disable heavy GPU blur repaints during mobile touch scroll */
+  .subtopic-card,
+  .interactive-lab-card,
+  .stat-card,
+  .footer-branding-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0f172a !important;
   }
-  .subtopic-grid {
-    grid-template-columns: 1fr 1fr;
+
+  .site-header {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    background: rgba(7, 9, 19, 0.96) !important;
   }
-  .dos-donts-container {
-    grid-template-columns: 1fr 1fr;
+
+  .topics-nav-bar {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    background: rgba(15, 23, 42, 0.97) !important;
   }
 }
 
-/* 2. Tablets & Mobile Screen Layout (<= 992px) */
+/* Breakpoint Overrides */
 @media (max-width: 992px) {
   .hero-section {
     grid-template-columns: 1fr;
@@ -1004,7 +1010,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* 3. Small Mobile Devices (<= 640px) */
 @media (max-width: 640px) {
   .nav-container {
     padding: 0.6rem 0.75rem;
@@ -1039,15 +1044,11 @@ h1, h2, h3, h4, h5, h6 {
   .btn-choice {
     width: 100%;
   }
-  .topics-nav-bar {
-    top: 51px;
-  }
 }
 
-/* 4. Very Small Phones (<= 400px e.g. iPhone SE / 360px phones) */
 @media (max-width: 400px) {
   .search-box {
-    display: none; /* Hide search input on ultra small screens to keep logo & badge clean */
+    display: none;
   }
   .nav-actions {
     gap: 0.4rem;

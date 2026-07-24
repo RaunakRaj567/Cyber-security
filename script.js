@@ -12,27 +12,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initCyberQuiz();
 });
 
-/* 1. Scroll Progress Bar */
+/* 1. Scroll Progress Bar - Throttled for 60fps Smooth Mobile Scrolling */
 function initScrollProgress() {
   const progressBar = document.getElementById('scrollProgressBar');
   if (!progressBar) return;
 
+  let ticking = false;
+
   window.addEventListener('scroll', () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (window.scrollY / totalHeight) * 100;
-    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-  });
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0) {
+          const progress = (window.scrollY / totalHeight) * 100;
+          progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
-/* 2. Topic Navigation & Active Scroll Observer */
+/* 2. Topic Navigation & Active Scroll Observer - Smooth & Non-Intrusive */
 function initTopicNavigation() {
   const chips = document.querySelectorAll('.topic-chip');
   const sections = document.querySelectorAll('.subtopic-card');
+  const scrollWrapper = document.querySelector('.topics-scroll-wrapper');
+
+  if (!sections.length || !chips.length) return;
 
   const observerOptions = {
     root: null,
-    rootMargin: '-100px 0px -40% 0px',
-    threshold: 0.1
+    rootMargin: '-80px 0px -50% 0px',
+    threshold: 0.05
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -42,7 +55,13 @@ function initTopicNavigation() {
         chips.forEach(chip => {
           if (chip.getAttribute('href') === `#${id}`) {
             chip.classList.add('active');
-            chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            // Gently scroll chip into view only if out of visible bounds of topic nav bar
+            if (scrollWrapper && isOutOfView(chip, scrollWrapper)) {
+              scrollWrapper.scrollTo({
+                left: chip.offsetLeft - scrollWrapper.clientWidth / 2 + chip.clientWidth / 2,
+                behavior: 'smooth'
+              });
+            }
           } else {
             chip.classList.remove('active');
           }
@@ -52,6 +71,14 @@ function initTopicNavigation() {
   }, observerOptions);
 
   sections.forEach(sec => observer.observe(sec));
+}
+
+function isOutOfView(element, container) {
+  const elemLeft = element.offsetLeft;
+  const elemRight = elemLeft + element.clientWidth;
+  const containerLeft = container.scrollLeft;
+  const containerRight = containerLeft + container.clientWidth;
+  return (elemLeft < containerLeft || elemRight > containerRight);
 }
 
 /* 3. Real-Time Search Filter */
@@ -195,7 +222,6 @@ window.checkScamChoice = function(userGuessedPhishing) {
     resultBox.innerHTML = `<strong>❌ OOPS! CAUGHT IN THE TRAP!</strong><br>${scam.explanation}`;
   }
 
-  // Auto advance next scenario after 4.5s
   setTimeout(() => {
     currentScamIdx = (currentScamIdx + 1) % scamScenarios.length;
     renderScamScenario();
